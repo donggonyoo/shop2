@@ -6,7 +6,6 @@ package kr.gdu.aop;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
 import jakarta.servlet.http.HttpSession;
@@ -20,7 +19,7 @@ import kr.gdu.logic.User;
  *  		마지막 매개변수가 String,HtppSession인 메서드
  */
 @Component
-@Aspect
+@Aspect //aop로사용하겠다는뜻
 public class UserLoginAspect {
 	//UserController에 idCheck로 시작하는 모든 메서드를 실행하기 전,후(around)에 해당메서드호출
 	@Around("execution(* kr.gdu.controller.User*.idCheck*(..)) && args(..,userid,session)")
