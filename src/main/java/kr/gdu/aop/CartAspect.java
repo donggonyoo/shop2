@@ -1,10 +1,5 @@
 package kr.gdu.aop;
 
-
-
-
-import org.aspectj .lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -13,7 +8,6 @@ import jakarta.servlet.http.HttpSession;
 import kr.gdu.exception.ShopException;
 import kr.gdu.logic.Cart;
 import kr.gdu.logic.User;
-
 
 
 @Component

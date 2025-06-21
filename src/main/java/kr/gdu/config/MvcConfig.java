@@ -26,10 +26,10 @@ public class MvcConfig  implements WebMvcConfigurer{
 		Properties pr = new Properties();
 		//shopException 예외가발생하면 exception.jsp호출
 		pr.put("exception.ShopException", "exception");
-		
-		ser.setExceptionMappings(pr);
+		ser.setExceptionMappings(pr); 
 		return ser;
 	}	
+	
 	@Bean
 	@Primary //우선적용
 	@ConfigurationProperties("spring.datasource")

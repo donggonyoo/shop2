@@ -8,7 +8,6 @@ public class ShopException extends RuntimeException{
 	
 	public ShopException(String msg,String url) {
 		super(msg);
-		this.url = url;
-		
+		this.url = url;		
 	}
 }
