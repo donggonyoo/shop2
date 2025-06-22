@@ -1,13 +1,7 @@
 package kr.gdu.service;
 
 import java.io.File;
-
-import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
-
-
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,7 +42,7 @@ public class ShopService {
 
 		//업로드파일이 존재 시 
 		if(item.getPicture() != null && !item.getPicture().isEmpty()) {
-			//프로젝트의 img폴더 하위에 저장
+			//프로젝트의 webapp하위의 img폴더 하위에 저장
 			String path =request.getServletContext().getRealPath("/")+"img/";
 			uploadFileCreate(item.getPicture(),path);//폴더에업로드
 			item.setPictureUrl(item.getPicture().getOriginalFilename());

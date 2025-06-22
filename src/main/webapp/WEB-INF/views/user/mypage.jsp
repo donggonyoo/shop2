@@ -101,6 +101,7 @@
                         </div>
                     </div>
                 </c:forEach>
+                <button onclick="location.href='../item/list'" >주문하러 가기</button>
             </div>
         </div>
     </div>

@@ -26,5 +26,4 @@ public class Item {
 	
 	private String pictureUrl;
 	private MultipartFile picture;
-
 }

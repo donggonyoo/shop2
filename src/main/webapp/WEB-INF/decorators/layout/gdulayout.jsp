@@ -201,15 +201,15 @@ body {
 	<div id="sidebar" class="sidebar border-end">
 		<div class="list-group list-group-flush mt-3">
 			<a href="/admin/dashboard"
-				class="list-group-item list-group-item-action">📊 대시보드</a> <a
-				href="/admin/users" class="list-group-item list-group-item-action">👥
-				사용자 관리</a> <a href="/board/list?boardid=1"
-				class="list-group-item list-group-item-action">📌 공지사항</a> <a
-				href="/board/list?boardid=2"
-				class="list-group-item list-group-item-action">💬 자유게시판</a> <a
-				href="/board/list?boardid=3"
-				class="list-group-item list-group-item-action">❓ Q&A</a> <a href="#"
-				class="list-group-item list-group-item-action">⚙️ 설정</a>
+				class="list-group-item list-group-item-action">📊 대시보드</a> 
+				<a href="/admin/users" class="list-group-item list-group-item-action">👥 사용자 관리</a> 
+				<a href="/item/list" class="list-group-item list-group-item-action">🛒 상품 목록</a> 
+				<a href="/board/list?boardid=1" class="list-group-item list-group-item-action">📌 공지사항</a> 
+				<a href="/board/list?boardid=2"
+				class="list-group-item list-group-item-action">💬 자유게시판</a> 
+				<a href="/board/list?boardid=3"
+				class="list-group-item list-group-item-action">❓ Q&A</a> 
+				<a href="#" class="list-group-item list-group-item-action">⚙️ 설정</a>
 				<a href="/chat/chat"
 				class="list-group-item list-group-item-action">&#x1F917; 채팅</a>
             <a href="/chat/chatbot"

@@ -1,20 +1,19 @@
 package kr.gdu.controller;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 
 import jakarta.servlet.http.HttpSession;
+import kr.gdu.dto.item.ItemAddDto;
 import kr.gdu.logic.Cart;
 import kr.gdu.logic.Item;
 import kr.gdu.logic.ItemSet;
@@ -29,7 +28,7 @@ public class CartController {
 	@Autowired
 	private ShopService service;
 
-	@RequestMapping("cartAdd")
+	/*@PostMapping("cartAdd")
 	public ModelAndView add(Integer id, Integer quantity, HttpSession session) {
 		// new ModelAndView(뷰명) : /WEB-INF/view/cart/cart.jsp
 		ModelAndView mav = new ModelAndView("cart/cart");
@@ -45,8 +44,27 @@ public class CartController {
 		mav.addObject("cart", cart);
 		System.out.println(cart);
 		return mav;
+	}*/
+	
+	@PostMapping("cartAdd")
+	//id와 quantity파라미터를 따로 가져오기보다는 modelAttribute를 활용해 dto객체에 담아서가져오자
+	public String add(ItemAddDto dto, HttpSession session,Model model) {
+		int id = dto.getId();
+		int quantity = dto.getQuantity();
+		Item item = service.getItem(id);
+		Cart cart = (Cart) session.getAttribute("CART");
+		if (cart == null) {
+			cart = new Cart();
+			session.setAttribute("CART", cart);
+		}
+		cart.push(new ItemSet(item, quantity));
+		model.addAttribute("message", item.getName() + ":" + quantity + "개 장바구니 추가");
+		model.addAttribute("cart", cart);
+		System.out.println(cart);
+		return "cart/cart"; // /WEB-INF/views/cart/cart.jsp뷰로이동
 	}
 
+	
 	@GetMapping("cartDelete")
 	public ModelAndView cartDelete(int index, HttpSession session) {
 		ModelAndView mav = new ModelAndView("cart/cart");
