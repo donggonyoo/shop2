@@ -214,6 +214,7 @@ body {
 				class="list-group-item list-group-item-action">&#x1F917; 채팅</a>
             <a href="/chat/chatbot"
 				class="list-group-item list-group-item-action">🤖 챗봇</a>
+            <a href="/naver/search" class="list-group-item list-group-item-action">네이버검색</a>
 		</div>
 		<%--수출입은행 환율정보표시영역 --%>
 		<div style="width: 100%">
