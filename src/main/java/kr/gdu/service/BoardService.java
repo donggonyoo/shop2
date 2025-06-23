@@ -1,6 +1,7 @@
 package kr.gdu.service;
 
 import java.io.BufferedReader;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -40,6 +41,7 @@ public class BoardService {
 	//appliaction.properties의 환경변수값 읽어오기
 	@Value("${summernote.imgupload}")
 	private String UPLOAD_IMAGE_DIR;
+	//
 
 	@Autowired
 	BoardDao boardDao;

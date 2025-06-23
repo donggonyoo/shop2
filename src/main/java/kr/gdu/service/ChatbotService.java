@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -18,10 +19,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Service
 public class ChatbotService {
    
+	@Value("${openai.api.key}")
+	private String API_KEY;
+	
   public String getChatGPTResponse(String question) throws URISyntaxException, IOException, InterruptedException {      
       HttpClient client =HttpClient.newHttpClient();
       Map<String, Object> requestBody = new HashMap<>();
-    final String API_KEY = "git으로올리지마!!!!!충돌남 (api_key는뭐 메일에저장해두고 필요할때만쓰던지해";
+    
       final String ENDPOINT = "https://api.openai.com/v1/chat/completions";
       requestBody.put("model","gpt-3.5-turbo"); 
       requestBody.put("messages",new Object[] {
