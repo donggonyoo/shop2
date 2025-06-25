@@ -3,9 +3,7 @@ package kr.gdu.controller;
 import java.util.List;
 
 
-
-import javax.validation.Valid;
-
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -67,7 +65,7 @@ public class ItemController {
 	//valid : 유효성검사
 	//BindingResult : error를 담고있는 객체
 	public ModelAndView register(@Valid Item item, BindingResult bresult,
-			HttpServletRequest request) {
+								 HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
 		if(bresult.hasErrors()) { //입력값 검증 오류발생 시 
 			return mav;
