@@ -60,7 +60,7 @@ public class CountScheduler {
 	 * 
 	 *  
 	 */
-		@Scheduled(cron="0 30 10 * * 1,2,3,4,5")
+		@Scheduled(cron="0 04 11 * * 1,2,3,4,5")
 		public void exchange() {
 			service.exchageCreate();
 		}

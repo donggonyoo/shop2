@@ -8,7 +8,7 @@ import kr.gdu.logic.Exchange;
 @Mapper
 public interface ExchangeMapper {
 
-	@Insert("insert into exchange (code , name , priamt ,sellamt, buyamt ,  edate) "
+	@Insert("insert into exchange (code , name , priamt ,sellamt, buyamt , edate) "
 			+ " values(#{code},#{name},#{priamt},#{sellamt},#{buyamt},#{edate})")
 	void insert(Exchange ex);
 
