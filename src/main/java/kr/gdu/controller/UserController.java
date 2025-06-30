@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import jakarta.validation.Valid;
 import kr.gdu.webSocket.EchoHandler;
 
 
