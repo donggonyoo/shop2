@@ -24,7 +24,7 @@ public class MvcConfig  implements WebMvcConfigurer{
 	public SimpleMappingExceptionResolver exceptionHandler() {
 		SimpleMappingExceptionResolver ser = new SimpleMappingExceptionResolver();
 		Properties pr = new Properties();
-		//shopException 예외가발생하면 exception.jsp호출
+		//exception패키지의 shopException 예외가발생하면 exception.jsp호출
 		pr.put("exception.ShopException", "exception");
 		ser.setExceptionMappings(pr); 
 		return ser;
@@ -43,6 +43,7 @@ public class MvcConfig  implements WebMvcConfigurer{
 		return properties.initializeDataSourceBuilder()
 				.type(HikariDataSource.class).build(); //Connection Pool 객체
 	}
+
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new BoardInterceptor())
